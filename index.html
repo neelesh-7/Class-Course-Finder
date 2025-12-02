@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Explorer</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="page-container">
+    <h1 class="page-title">Course Explorer</h1>
+
+    <!-- Load JSON section -->
+    <section class="load-section">
+        <h2>Load Courses (JSON)</h2>
+        <div class="file-row">
+            <input type="file" id="fileInput" accept=".json" />
+            <span id="fileName" class="file-name">No file selected</span>
+        </div>
+        <div id="errorMessage" class="error-message" aria-live="polite"></div>
+    </section>
+
+    <!-- Sort & filter controls -->
+    <section class="controls-section">
+        <h2>Sort and Filter</h2>
+        <div class="controls-row">
+            <label>
+                Department:
+                <select id="filterDepartment">
+                    <option value="">All</option>
+                </select>
+            </label>
+
+            <label>
+                Level:
+                <select id="filterLevel">
+                    <option value="">All</option>
+                </select>
+            </label>
+
+            <label>
+                Credits:
+                <select id="filterCredits">
+                    <option value="">All</option>
+                </select>
+            </label>
+
+            <label>
+                Instructor:
+                <select id="filterInstructor">
+                    <option value="">All</option>
+                </select>
+            </label>
+
+            <label>
+                Sort By:
+                <select id="sortBy">
+                    <option value="none">None</option>
+                    <option value="id-asc">ID (A–Z)</option>
+                    <option value="id-desc">ID (Z–A)</option>
+                    <option value="title-asc">Title (A–Z)</option>
+                    <option value="title-desc">Title (Z–A)</option>
+                    <option value="sem-earliest">Semester (Earliest first)</option>
+                    <option value="sem-latest">Semester (Latest first)</option>
+                </select>
+            </label>
+        </div>
+    </section>
+
+    <!-- Main content: list on the left, details on the right -->
+    <section class="courses-section">
+        <div id="courseList" class="course-list">
+            <p class="placeholder-text">Load a JSON file to view courses.</p>
+        </div>
+
+        <div id="courseDetails" class="course-details">
+            <p class="placeholder-text">
+                Select a course from the list to see its details here.
+            </p>
+        </div>
+    </section>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
